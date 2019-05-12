@@ -9,15 +9,15 @@ package com.sinensia;
  *
  * @author Admin
  */
-public class ClienteVIP extends Cliente {
+public class ClienteVip extends Cliente {
 
     private String beneficios;
 
-    public ClienteVIP(long id, String nombre, String email) {
+    public ClienteVip(long id, String nombre, String email) {
         super(id, nombre, email);
         beneficios = "";
     }    
-    public ClienteVIP(long id, String nombre, String email, String beneficios) {
+    public ClienteVip(long id, String nombre, String email, String beneficios) {
         super(id, nombre, email);
         this.beneficios = beneficios;
     }    

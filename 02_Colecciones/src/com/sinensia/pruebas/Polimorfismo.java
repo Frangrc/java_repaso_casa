@@ -7,7 +7,7 @@ package com.sinensia.pruebas;
 
 import com.sinensia.Cliente;
 import com.sinensia.ClienteInvitado;
-import com.sinensia.ClienteVIP;
+import com.sinensia.ClienteVip;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -50,7 +50,7 @@ public class Polimorfismo {
         clientes.add(new Cliente(2, "Juan", "jjj@jjj.com"));
         clientes.add(new ClienteInvitado(3, "Bea", "bbb@bbb.com"));
         clientes.add(new ClienteInvitado(4, "Luis", "bbb@bbb.com"));
-        clientes.add(new ClienteVIP(4, "Aria", "rrr@rrr.com", "Vengarse de sus enemigos"));
+        clientes.add(new ClienteVip(4, "Aria", "rrr@rrr.com", "Vengarse de sus enemigos"));
         for (Cliente cliente : clientes) {
             cliente.mostrar();
         } 
@@ -81,8 +81,8 @@ public class Polimorfismo {
             if (valor instanceof ClienteInvitado) {
                 ClienteInvitado cliInv = (ClienteInvitado) valor;
                 cliInv.setDuracionMax(cliInv.getDuracionMax() + 10);
-            } else if (valor instanceof ClienteVIP) {
-                ClienteVIP cliVip = (ClienteVIP) valor;
+            } else if (valor instanceof ClienteVip) {
+                ClienteVip cliVip = (ClienteVip) valor;
                 cliVip.setBeneficios(cliVip.getBeneficios() + ", Copas gratis");
             }
             valor.mostrar();
