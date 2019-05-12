@@ -79,7 +79,7 @@ public class ProbandoAnimales {
         }
         
         else if ("Wiskas".equals(quienMama)){
-            System.out.println("Elia la opción de método: (1/2)");
+            System.out.println("Elia la opción de método: (1/2/3)");
             String opcion = scanner.nextLine();
             if("1".equals(opcion)){
             System.out.println(leon.mamar1(wiskas));
