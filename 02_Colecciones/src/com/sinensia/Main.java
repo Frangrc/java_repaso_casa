@@ -9,9 +9,9 @@ import com.sinensia.pruebas.Polimorfismo;
 public class Main {
 
     public static void main(String[] args) {
-        /*Polimorfismo.polimorfeandoConListas();
-        Polimorfismo.clientes.add(new Cliente(7, "Yo", null));
-        Polimorfismo.poliformHashMap();*/
+        //Polimorfismo.polimorfeandoConListas();
+        //Polimorfismo.clientes.add(new Cliente(7, "Yo", null));
+        //Polimorfismo.poliformHashMap();
         //Colecciones.ejemploListas();
         //Colecciones.ejemploSet();
         /*Colecciones.ejemploHashMap();
