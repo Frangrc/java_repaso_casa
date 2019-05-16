@@ -69,7 +69,7 @@ public void saludarAlPropietario(){
             
     } 
 
-//@Override
+//No hace falta sobreescribir mamar3 porque la implementamos aquí
     public String mamar3(Mamifero mam) {
         
         return "El gato " + nombre + " mama del "+

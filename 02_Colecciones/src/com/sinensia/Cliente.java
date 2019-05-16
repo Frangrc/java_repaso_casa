@@ -1,7 +1,8 @@
 package com.sinensia;
+import com.sinensia.dao.GenericoDAO;
 
-public class Cliente {
-    protected long id;    
+public class Cliente extends Entidad implements Comparable<Cliente> {
+        
     protected String nombre;
     private String email;
     private boolean activo;
@@ -11,7 +12,7 @@ public class Cliente {
     }*/
     public Cliente(long id, String nombre, String email) /* throws Exception*/ {
         
-        this.id = id;
+        super(id); //Heredamos id de la clase padre
         if (nombre == null || nombre == "") {
             // throw new Exception("Nombre de cliente inválido");
             System.err.println("Nombre de cliente inválido");
@@ -52,5 +53,29 @@ public class Cliente {
         System.out.println("Cliente " + nombre);
         System.out.println("  Id: " + this.id);
         System.out.println("  Email: " + this.getEmail());
+    
     }
+
+    @Override
+    public String toString() {
+        
+       return "Cliente [" + id + ", " + nombre + ", " + email + "]";
+    
+    }
+
+    @Override
+    public int compareTo(Cliente otroCli) {
+        //Comparamos por nombre por el compareTo de String
+    if(nombre.compareTo(otroCli.nombre)==0){
+    //Si coinciden, comparamos por email
+        return email.compareTo(otroCli.email);
+        
+    }
+    else{//Devolvemos la comparacion por nombre
+    return nombre.compareTo(otroCli.nombre);
+    
+    }
+    }
+
+
 }

@@ -7,16 +7,36 @@ package com.sinensia.pruebas;
 
 import com.sinensia.Cliente;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  *
  * @author Admin
  */
 public class Colecciones {
+    
+    
+    public static void comparaciones(){
+        Cliente luis = new Cliente(2, "Luis", null); 
+        Cliente bea = new Cliente(3, "Bea", null);
+//       Cliente luisG = new Cliente(2, "LuisG", "@ijdif"); 
+//        Cliente luisH = new Cliente(3, "LuisH", "@kdijf");
+        if (bea.compareTo(luis)<0)
+            System.out.println("BEA es menor que LUIS");
+        else if(bea.compareTo(luis)==0)
+            System.out.println("BEA es igual que LUIS");
+        else if(bea.compareTo(luis)>0)
+            System.out.println("BEA es mayor que LUIS");
+   
+    
+    
+    
+    }
     
     public static void ejemploHashMap() {
         HashMap<String, Cliente> diccClientes;
@@ -41,7 +61,25 @@ public class Colecciones {
             System.out.println("Cliente " + parClaveValor.getKey());
             Cliente cliente = parClaveValor.getValue();
             System.out.println("  Nombre: " + cliente.getNombre());
+            
         }        
+    
+        diccClientes.put("d4", new Cliente(7, "Fulano", "@iufdjifd"));
+        Map<Date, Cliente> mapClientesFecha= new TreeMap<Date, Cliente>();
+        mapClientesFecha.put(new Date(82, 4, 9), luis);
+        mapClientesFecha.put(new Date(81, 4, 9), new Cliente(7, "Fulano", "@okdie"));
+        mapClientesFecha.put(new Date(82, 9, 19), new Cliente(8,"Mengano", "@ldoe"));
+        mapClientesFecha.put(new Date(80, 7, 10), diccClientes.get("c3"));
+        
+        System.out.println("\n\n****** Mapa ordenado por fecha ******\n");
+        for(Map.Entry<Date, Cliente> entrada: mapClientesFecha.entrySet()){
+        
+        System.out.println(" - clave: " + entrada.getKey().toString());
+        System.out.println(" - valor: " + entrada.getKey().toString());
+        }
+    
+    
+    
     }
     public static void ejemploListas() {        
         ArrayList<Cliente> listaClientes;
