@@ -23,39 +23,36 @@ and open the template in the editor.
                 objCliente.nombre = "Juan";
                 objCliente.edad = 27;
                 objCliente["activo"] = true;
-                divDatos.innerHTML += "Nombre: " + objCliente["nombre"] + "Activo: "
+                divDatos.innerHTML += "Nombre: " + objCliente["nombre"] + " Activo: "
                         + objCliente.activo + "</br>";
                 objCliente.toString = function () {
-                    return "Nombre:" + this.nombre + "Edad"
+                    return "Nombre: " + this.nombre + " Edad: "
                             + this["edad"];
-
-                };
-                var funATexto = new Function("param", "return this.nombre + \" - \" + 'param'");
+                };               
+                var funATexto = new Function("param", "return this.nombre + \" - \" + param");
                 funATexto.propiedadSinSentido = "No tengo razon para vivir";
                 objCliente.aTexto = funATexto;
                 divDatos.innerHTML += objCliente.toString() + "</br>";
-                divDatos.innerHTML += objCliente.aTexto("Valor 1", "Valor 2");
+                divDatos.innerHTML += objCliente.aTexto("Valor 1", "Valor 2")+ "</br>" ;
 
                 var Cliente = function (nom, edad) {
                     this.nombre = nom;
                     this.edad = edad;
                     this.enTexto = function () {
-                        return "Cliente: " + this.nombre + " edad = " + this.edad;
+                        return "Cliente: " + this.nombre + " Edad = " + this.edad;
                     };
 
                 };
-                var miCliente = new Cliente("Ana", 30);
+                var miCliente = new Cliente("Ana" , 30);
                 divDatos.innerHTML += miCliente.enTexto() + "</br>";
 
                 var otroCliente = {
-                    "nombre": "luis",
+                    "nombre": "Luis",
                     "edad": 88,
-                    "actico": true,
-                    "enTexto": function () {
-                        return "cli" + this.nombre
-                    }
+                    "activo": true,
+                    "enTexto": function () {return "Cli" + this.nombre}
                 };
-                divDatos.innerHTML += otroCliente.enTexto() + ">"
+                divDatos.innerHTML += otroCliente.enTexto() + " > "
                         + otroCliente.edad;
                 for (var clave in otroCliente) {
                     divDatos.innerHTML += "<br/>" + otroCliente[clave];
