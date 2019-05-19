@@ -1,17 +1,42 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Otros campos FORM</title>
+        <title>Tablas con JS</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>Tabla generada JS</h1>
+        <h1>Formulario para rellenar tabla JS</h1>
+        //Las etiquetas no hacen falta porue se ponen por JS
+        <form action="#" method="post" enctype="text/plain">
+        <label for="tipo">Tipo:</label>
+            <input type="text" name="tipo" id="tipo"
+                   size="30" maxlength="40"  
+                   ><br/>
+            <br/>
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre"
+                   size="30" maxlength="255"><br/>       
+            <br/>
+            <label for="preciovaina">PrecioVaina:</label>
+            <input type="number" name="preciovaina" id="preciovaina"
+                   ><br/>
+            <br/>
+            <label for="stock">Stock:</label>
+            <input type="number" name="stock" id="stock"><br/>
+        <input type="button" value="Enviar formulario" onclick="meterFila()">
+       <input type="button" value="Añadir" onclick="meterFilaDirectamenteTabla()">
+        <input type="reset" value=""/>
+        
+        </form>
+        
+        
+        
         <table border="2">
                 
         </table>
         
         
-        <script src="js/05_tabla_js.js"></script>
+        <script src="js/05_tabla_js.js"></script>   
     </body>
 </html>

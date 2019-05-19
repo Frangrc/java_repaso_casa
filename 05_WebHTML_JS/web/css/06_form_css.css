@@ -1,0 +1,101 @@
+/*
+
+*/
+/* 
+    Created on : 17-may-2019, 13:26:09
+    Author     : Admin
+*/
+
+*{
+  margin: 0px;  
+    padding:0px;
+}
+
+/*Selector de etiquetas*/
+form{
+    background-color: #AAFFAA;
+    padding: 10px;
+    display: block;
+}
+
+.ajuste_edad{
+   font-size: 1.2em; 
+margin-bottom: 3%;
+}
+
+.boton1{
+  font-size: 0.8em;  
+    
+}
+
+.boton2{
+  font-size: 0.8em;  
+    
+}
+
+.ajuste_email{
+    
+   font-size: 1.2em; 
+   margin-bottom: 3%;
+}
+
+.ajuste_nombre{
+    
+   font-size: 1.2em; 
+margin-bottom: 3%;
+}
+
+.aumentar_botones{
+    
+  font-size: 1.3em; 
+  padding: 10px;
+    
+}
+
+.centrar_botones{
+    
+   margin-left: 31%;
+   margin-right: 5%;
+   margin-bottom: 1%;
+   margin-top: 3%;
+    
+}
+
+.margen_lateral_titulo{
+    
+   margin-left: 42%;
+   margin-right: 20%; 
+   font-style: italic;
+   color: darkcyan;
+}
+.margen_lateral {
+    
+    margin-left: 20%;
+    margin-right: 20%;
+    
+}
+
+form div{
+    
+    display: block;
+}
+
+label{
+    width: 200px;
+    display: inline-block;/* Atributo que indica como vamos a mostrar las cosas*/
+}
+
+#email{
+  font-size: 1.2em;  
+    
+}
+
+#nombre{
+  font-size: 1.2em;  
+    
+}
+
+#edad{
+  font-size: 1.2em;  
+    
+}
