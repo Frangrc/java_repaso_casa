@@ -38,8 +38,9 @@ public class ClienteServicioTest {
     
     @Test
     public void clienteMal_1(){
-    servCli.crear("","clienteMal@du.com", "ok12", "30", "on");
+    servCli.crear("Ok","email@du.com", "", "30", "on");
     assertNull(servCli.obtenerUno("clienteMal@du.com"));
+    
     }
     
     
