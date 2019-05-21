@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "b402b4ae-7fc0-416f-9935-5e69bdebfa81",
+		"name": "Peticiones web clientes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Nuevo cliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/06_WebServlets/registro?nombre=Manuelin&edad=29&email=ekmdi@eemail.com&nombre=on",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"06_WebServlets",
+						"registro"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "Manuelin"
+						},
+						{
+							"key": "edad",
+							"value": "29"
+						},
+						{
+							"key": "email",
+							"value": "ekmdi@eemail.com"
+						},
+						{
+							"key": "activo",
+							"value": "on"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Nuevo cliente copia",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Nuevo cliente invalida",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/06_WebServlets/registro?nombre=&edad=33&email=ekmdiemfd%40email.com&nombre=on",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"06_WebServlets",
+						"registro"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": ""
+						},
+						{
+							"key": "edad",
+							"value": "33"
+						},
+						{
+							"key": "email",
+							"value": "ekmdiemfd%40email.com"
+						},
+						{
+							"key": "activo",
+							"value": "on"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

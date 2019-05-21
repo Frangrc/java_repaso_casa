@@ -27,3 +27,8 @@ hs_err_pid*
 /03_LecturaClientes/dist/
 /05_WebHTML_JS/nbproject/private/
 /05_WebHTML_JS/build/
+/06_WebServlets/nbproject/private/
+/06_WebServlets/build/
+/06_WebServlets/dist/
+/AplicacionWebVentas/ModeloVentas/nbproject/
+/AplicacionWebVentas/ModeloVentas/target/
