@@ -61,7 +61,7 @@ public class ServicioClientes {
     }
     
     public Cliente modificar(int id,String nombre, String email, String passwd, String edad, String activo)
-    //throws Exception
+    throws Exception
     {
     Cliente cli=null;
         if(validar(nombre, email,passwd,edad,activo)){

@@ -7,6 +7,8 @@ package com.sinensia.test;
 
 import com.sinensia.modelo.Cliente;
 import com.sinensia.modelo.dao.ClienteDAO;
+import com.sinensia.modelo.dao.InterfazDAO;
+import com.sinensia.modelo.dao.MySQLClienteDAO;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -18,13 +20,13 @@ import static org.junit.Assert.*;
  */
 public class ClienteDAOTest {
     
-    private static ClienteDAO daoCli;
+    private static MySQLClienteDAO daoCli;
     
  
     
     @BeforeClass
     public static void setUpClass() {
-        daoCli = new ClienteDAO();
+        daoCli = new MySQLClienteDAO();
         assertNotNull("Error inicializacion DAO",daoCli);
     }
     
@@ -33,26 +35,25 @@ public class ClienteDAOTest {
     }
     
 
-//     @Test
-//     public void clienteBien1() {     
-//     //4 clientes bien    
-//     daoCli.poner(new Cliente(null, "Pru", "pru@pru", (short) 20, (short) 1, "Pru123"));
-//    
-//          
-//     //assertEquals(4, daoCli.leerTodos().size());
-//     assertEquals("pru@pru", daoCli.leerUno(3).getEmail());
-//     daoCli.eliminar(1);
-//     assertNull(daoCli.leerUno(1));
-//     
-//     }
-//
-//     @Test     
-//     public void clienteMal_1() {
-//         assertEquals(4, daoCli.leerTodos().size());
-//       daoCli.poner(new Cliente(null, "", "pru@pru", (short) 20, (short) 1, "Pru123"));
-//     assertEquals("pru@pru", daoCli.leerUno(3).getEmail());
-//     
-//     }
+     @Test
+     public void clienteBien1() {     
+     //4 clientes bien    
+     assertNotNull(daoCli.insertar(new Cliente(null, "Pru", "prux@pru", (short) 20, (short) 1, "Pru123")));
+              
+     //assertEquals(4, daoCli.obtenerTodos().size());
+     assertEquals("prux@pru", daoCli.obtenerUno("prux@pru").getEmail());
+     daoCli.eliminar("prux@pru");
+     assertNull(daoCli.obtenerUno("prux@pru"));
+     
+     }
+
+     @Test     
+     public void clienteMal_1() {
+        //assertEquals(4, daoCli.obtenerTodos().size());
+     assertNull(daoCli.insertar(new Cliente(null, "", "prux@pru", (short) 20, (short) 1, "Pru123")));
+     assertEquals("prux@pru", daoCli.obtenerUno(1).getEmail());
+     
+     }
 
 
 
