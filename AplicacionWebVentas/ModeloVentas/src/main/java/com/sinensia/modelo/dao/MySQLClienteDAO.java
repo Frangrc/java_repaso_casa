@@ -79,9 +79,9 @@ public class MySQLClienteDAO implements InterfazDAO<Cliente> {
     }
 
     @Override
-    public Cliente obtenerUno(Integer id) {
-    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-       
+    public Cliente obtenerUno(Integer id) {       
+     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+           
     }
 
     public Cliente obtenerUno(String email) {

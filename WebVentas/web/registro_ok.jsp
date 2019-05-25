@@ -13,7 +13,8 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <% (new ServicioClientes()).obtenerUno("prueba@mail.com").getNombre();%>
+        <%@include file="cabecera.jsp" %> 
+     
         <%for (int i=0;i<10;i++)
         {
           %>  

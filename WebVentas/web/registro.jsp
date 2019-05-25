@@ -11,7 +11,8 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>Registro</h1>
+        <%@include file="cabecera.jsp" %>
+        <h2>Registro</h2>
         <form name="form" method="post" action="clientes.do">
             <label> Nombre:</label>
             <input id="nombre" name="nombre" type="text" 

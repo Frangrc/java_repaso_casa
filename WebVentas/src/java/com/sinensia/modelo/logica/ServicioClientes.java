@@ -8,6 +8,7 @@ package com.sinensia.modelo.logica;
 import com.sinensia.modelo.Cliente;
 //import com.sinensia.modelo.dao.ClienteDAO;
 import com.sinensia.modelo.dao.MySQLClienteDAO;
+import java.util.List;
 
 /**
  *
@@ -95,4 +96,10 @@ public class ServicioClientes {
         //TO DO: Faltan ciertas validaciones
         return true;
     }
+
+public List<Cliente> obtenerTodos(){
+return dao.obtenerTodos();
+
+}
+
 }
