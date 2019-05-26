@@ -34,23 +34,6 @@ public class ControladorClientes extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ControladorClientes</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ControladorClientes at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
-    }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -66,30 +49,29 @@ public class ControladorClientes extends HttpServlet {
         processRequest(request, response);
 
         String nombre = request.getParameter("nombre");
-        nombre=nombre!=null ? nombre : "";
-        
-        Cookie galleta=new Cookie("nombre_busqueda",nombre);
+        nombre = nombre != null ? nombre : "";
+
+        Cookie galleta = new Cookie("nombre_busqueda", nombre);
         galleta.setMaxAge(10000);
         response.addCookie(galleta);
-        
-        
-        
+
         ServicioClientes srvCli = new ServicioClientes();
         List<Cliente> listado = srvCli.obtenerTodos();
         List<Cliente> listaPorNombre = new ArrayList<>();
         for (Cliente cliente : listado) {
-            if (cliente.getNombre().contains(nombre.toLowerCase())) {
+            if (cliente.getNombre().toLowerCase()
+                    .contains(nombre.toLowerCase())) {
+
                 listaPorNombre.add(cliente);
             }
-                       
         }
-    //BEAN: objeto transmitible a traves de toda la aplicacion, en este caso, ambito
-    //de sesion
-    //Coger la listapornombre y adjuntarla a la peticion para que cuando redirijamos
-    //a la vista de listado_jstl
-    request.getSession().setAttribute("listaPorNombre", listaPorNombre);
-    request.getRequestDispatcher("listado_jstl.jsp")
-            .forward(request, response);
+        //BEAN: objeto transmitible a traves de toda la aplicacion, en este caso, ambito
+        //de sesion
+        //Coger la listapornombre y adjuntarla a la peticion para que cuando redirijamos
+        //a la vista de listado_jstl
+        request.getSession().setAttribute("listaPorNombre", listaPorNombre);
+        request.getRequestDispatcher("listado_jstl.jsp")
+                .forward(request, response);
     }
 
     /**
